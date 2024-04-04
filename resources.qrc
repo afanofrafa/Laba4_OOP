@@ -1,0 +1,43 @@
+<RCC>
+    <qresource prefix="/">
+        <file>img/AKM.png</file>
+        <file>img/Blade.jpg</file>
+        <file>img/Deagle.jpg</file>
+        <file>img/Drobovik.png</file>
+        <file>img/Katana.jpg</file>
+        <file>img/Knife.png</file>
+        <file>img/Mech.png</file>
+        <file>img/target.png</file>
+        <file>img/target1.jpg</file>
+        <file>img/target2.jpg</file>
+        <file>img/target3.png</file>
+        <file>img/target4-fotor-bg-remover-20240329192616.png</file>
+        <file>img/target4.jpg</file>
+        <file>img/Vintovka.jpg</file>
+        <file>sounds/BladeSharpen.mp3</file>
+        <file>sounds/BladeSlash.mp3</file>
+        <file>sounds/BladeStab.mp3</file>
+        <file>sounds/DeagleClean.mp3</file>
+        <file>sounds/DeagleReload.mp3</file>
+        <file>sounds/DeagleShot.mp3</file>
+        <file>sounds/KatanaSharpen.mp3</file>
+        <file>sounds/KatanaSlash.mp3</file>
+        <file>sounds/KatanaStab.mp3</file>
+        <file>sounds/KnifeSharpen.mp3</file>
+        <file>sounds/KnifeSlash.mp3</file>
+        <file>sounds/KnifeStab.mp3</file>
+        <file>sounds/MachineGunClean.mp3</file>
+        <file>sounds/MachineGunReload.mp3</file>
+        <file>sounds/MachineGunShot.mp3</file>
+        <file>sounds/Penetration.mp3</file>
+        <file>sounds/RifleClean.mp3</file>
+        <file>sounds/RifleReload.mp3</file>
+        <file>sounds/ShotGunClean.mp3</file>
+        <file>sounds/ShotGunReload.mp3</file>
+        <file>sounds/ShotGunShot.mp3</file>
+        <file>sounds/SwordSharpen.mp3</file>
+        <file>sounds/SwordSlash.mp3</file>
+        <file>sounds/SwordStab.mp3</file>
+        <file>sounds/VintovkaShot.mp3</file>
+    </qresource>
+</RCC>
