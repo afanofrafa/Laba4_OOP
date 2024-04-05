@@ -12,8 +12,12 @@ int main(int argc, char *argv[])
     }
     else
     {
+        libraries.push_back(make_pair(LoadLibrary(L"libuGun.dll"), "libuGun.dll"));
+        libraries.push_back(make_pair(LoadLibrary(L"libuRifle.dll"), "libuRifle.dll"));
+        libraries.push_back(make_pair(LoadLibrary(L"libFirearm.dll"), "libFirearm.dll"));
+        libraries.push_back(make_pair(LoadLibrary(L"libuShotGun.dll"), "libuShotGun.dll"));
+        libraries.push_back(make_pair(LoadLibrary(L"libuMachineGun.dll"), "libuMachineGun.dll"));
         libraries.push_back(make_pair(LoadLibrary(L"lib_Encryption.dll"), "lib_Encryption.dll"));
-        //libraries.push_back(make_pair(LoadLibrary(L"libuGun.dll"), "libuGun.dll"));
     }
     for (int i = 0; i < libraries.size(); i++) {
         if (libraries.at(i).first == NULL) {
@@ -23,10 +27,10 @@ int main(int argc, char *argv[])
     }
     MainWindow w;
     w.setLibraries(libraries);
-    /*if (!w.checkLibraries(libraries)) {
+    if (!w.checkLibraries(libraries)) {
         qDebug() << "Ошибка при загрузке библиотек";
         return 1;
-    }*/
+    }
     w.show();
     return a.exec();
 }

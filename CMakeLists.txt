@@ -30,6 +30,9 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(Qt6_Laba4_OOP
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
+        img/target.png img/target1.jpg img/target2.jpg img/target3.png img/target4-fotor-bg-remover-20240329192616.png img/target4.jpg
+        resources.qrc
+
 
     )
 # Define target properties for Android with Qt 6 as:

@@ -8,6 +8,7 @@
 #include <QPainter>
 #include <QPixmap>
 #include <QPainterPath>
+#include <QPushButton>
 #include <QEvent>
 #include <QByteArray>
 #include <QMouseEvent>
@@ -59,6 +60,8 @@ private slots:
     void on_pushButton_Meth_1_clicked();
 
     void on_pushButton_Meth_2_clicked();
+
+    void accepting(QString action, int index);
 
 private:
     Ui::MainWindow *ui;
