@@ -12,11 +12,18 @@
 #include <QEvent>
 #include <QByteArray>
 #include <QMouseEvent>
+#include <QToolButton>
+#include <QComboBox>
 #include "Static/visitor_drawvisitor.h"
 #define WeaponTypesCount 4
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
+struct wepData {
+    HINSTANCE hDll;
+    Weapon *weap;
+    int number;
+};
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -57,20 +64,30 @@ private slots:
 
     bool checkActionAttack();
 
-    void on_pushButton_Meth_1_clicked();
-
-    void on_pushButton_Meth_2_clicked();
-
     void accepting(QString action, int index);
+
+    void onButtonClicked();
+
+    void buttonsClear();
+
+    void SetButtonsEnabled();
+
+    void SetButtonsVisible();
+
+    void allow_attack();
 
 private:
     Ui::MainWindow *ui;
     int const iconSize = 150;
     QPushButton button;
+    map<QToolButton*, QString> buttonsImgs;
+    vector<QToolButton*> buttons;
     vector<pair<HINSTANCE, QString>> libraries;
-    typedef Weapon* (*CreateInstance)();
+    vector<HINSTANCE> librs;
+    typedef Weapon* (*CreateInstance)(int);
     map<int, pair<HINSTANCE, CreateInstance>> wepMap;
-    vector<pair<HINSTANCE, Weapon*>> weapon_vect;
+    vector<wepData> weapon_vect;
+    QComboBox *comboBox;
     map<QString, QString> map_verify;
     QString generateSignature(const QString filePath);
     bool verifySignature(const QString filePath, QString expectedSignature);

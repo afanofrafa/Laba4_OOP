@@ -14,107 +14,52 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="label_3">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>230</y>
-      <width>171</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>12</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>Выбрать скорость:</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>53</y>
-      <width>81</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 11pt &quot;Segoe UI&quot;;</string>
-    </property>
-    <property name="text">
-     <string>Склад:</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_BuyNum">
-    <property name="geometry">
-     <rect>
-      <x>1410</x>
-      <y>3</y>
-      <width>41</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <property name="layoutDirection">
-     <enum>Qt::LeftToRight</enum>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: red;
-font: 15pt &quot;Segoe UI&quot;;</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="comboBox_WeaponList">
+   <widget class="QPushButton" name="pushButton_Throw">
     <property name="geometry">
      <rect>
       <x>1230</x>
-      <y>83</y>
+      <y>180</y>
       <width>231</width>
-      <height>81</height>
+      <height>31</height>
      </rect>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="layoutDirection">
      <enum>Qt::LeftToRight</enum>
     </property>
-   </widget>
-   <widget class="QSpinBox" name="spinBox_time">
-    <property name="geometry">
-     <rect>
-      <x>190</x>
-      <y>300</y>
-      <width>48</width>
-      <height>29</height>
-     </rect>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #4CAF50;  /* Задаем цвет фона */
+    font: 11pt &quot;Segoe UI&quot;;
+    color: white;  /* Задаем цвет текста */
+    border: 1px solid rgb(154, 255, 143);  /* Задаем толщину и цвет границы */
+    border-radius: 7px;  /* Закругляем углы */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);  /* Добавляем тень */
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;  /* Добавляем плавные переходы */
+}
+
+QPushButton:hover {
+    background-color: #45a049;  /* Цвет фона при наведении */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);  /* Увеличиваем тень при наведении */
+    transform: translateY(-2px);  /* Поднимаем кнопку на 2 пикселя */
+}
+
+QPushButton:pressed {
+    background-color: #39803d;  /* Цвет фона при нажатии */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);  /* Уменьшаем тень при нажатии */
+    transform: translateY(2px);  /* Поднимаем кнопку на 2 пикселя при нажатии */
+}</string>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>11</pointsize>
-     </font>
-    </property>
-    <property name="minimum">
-     <number>10</number>
-    </property>
-    <property name="maximum">
-     <number>60</number>
-    </property>
-    <property name="value">
-     <number>20</number>
+    <property name="text">
+     <string>Выбросить</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_Buy">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>173</y>
+      <y>170</y>
       <width>231</width>
-      <height>31</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="cursor">
@@ -147,16 +92,75 @@ QPushButton:pressed {
      <string>Приобрести</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_Meth_1">
-    <property name="enabled">
-     <bool>true</bool>
+   <widget class="QComboBox" name="comboBox_ChooseWeapon">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>80</y>
+      <width>231</width>
+      <height>81</height>
+     </rect>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>50</y>
+      <width>81</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 11pt &quot;Segoe UI&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Склад:</string>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="listWidget_Info">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>403</y>
+      <width>261</width>
+      <height>201</height>
+     </rect>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_Info">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>370</y>
+      <width>231</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 11pt &quot;Segoe UI&quot;;
+</string>
+    </property>
+    <property name="text">
+     <string>Информация об оружии:</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboBox_WeaponList">
     <property name="geometry">
      <rect>
       <x>1230</x>
-      <y>250</y>
+      <y>80</y>
       <width>231</width>
-      <height>31</height>
+      <height>81</height>
      </rect>
     </property>
     <property name="cursor">
@@ -165,38 +169,31 @@ QPushButton:pressed {
     <property name="layoutDirection">
      <enum>Qt::LeftToRight</enum>
     </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton {
-    background-color: #4CAF50;  /* Задаем цвет фона */
-    font: 11pt &quot;Segoe UI&quot;;
-    color: white;  /* Задаем цвет текста */
-    border: 1px solid rgb(154, 255, 143);  /* Задаем толщину и цвет границы */
-    border-radius: 7px;  /* Закругляем углы */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);  /* Добавляем тень */
-    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;  /* Добавляем плавные переходы */
-}
-
-QPushButton:hover {
-    background-color: #45a049;  /* Цвет фона при наведении */
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);  /* Увеличиваем тень при наведении */
-    transform: translateY(-2px);  /* Поднимаем кнопку на 2 пикселя */
-}
-
-QPushButton:pressed {
-    background-color: #39803d;  /* Цвет фона при нажатии */
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);  /* Уменьшаем тень при нажатии */
-    transform: translateY(2px);  /* Поднимаем кнопку на 2 пикселя при нажатии */
-}</string>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>277</y>
+      <width>151</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
     </property>
     <property name="text">
-     <string/>
+     <string>Выбрать время
+стрельбы(сек):</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_start">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>10</y>
+      <y>7</y>
       <width>231</width>
       <height>41</height>
      </rect>
@@ -239,178 +236,11 @@ QPushButton:pressed {
      <string>Старт</string>
     </property>
    </widget>
-   <widget class="QListWidget" name="listWidget_Info">
-    <property name="geometry">
-     <rect>
-      <x>1230</x>
-      <y>483</y>
-      <width>261</width>
-      <height>201</height>
-     </rect>
-    </property>
-    <property name="layoutDirection">
-     <enum>Qt::LeftToRight</enum>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_Throw">
-    <property name="geometry">
-     <rect>
-      <x>1230</x>
-      <y>183</y>
-      <width>231</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="layoutDirection">
-     <enum>Qt::LeftToRight</enum>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton {
-    background-color: #4CAF50;  /* Задаем цвет фона */
-    font: 11pt &quot;Segoe UI&quot;;
-    color: white;  /* Задаем цвет текста */
-    border: 1px solid rgb(154, 255, 143);  /* Задаем толщину и цвет границы */
-    border-radius: 7px;  /* Закругляем углы */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);  /* Добавляем тень */
-    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;  /* Добавляем плавные переходы */
-}
-
-QPushButton:hover {
-    background-color: #45a049;  /* Цвет фона при наведении */
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);  /* Увеличиваем тень при наведении */
-    transform: translateY(-2px);  /* Поднимаем кнопку на 2 пикселя */
-}
-
-QPushButton:pressed {
-    background-color: #39803d;  /* Цвет фона при нажатии */
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);  /* Уменьшаем тень при нажатии */
-    transform: translateY(2px);  /* Поднимаем кнопку на 2 пикселя при нажатии */
-}</string>
-    </property>
-    <property name="text">
-     <string>Выбросить</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>1230</x>
-      <y>13</y>
-      <width>191</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <property name="layoutDirection">
-     <enum>Qt::LeftToRight</enum>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 11pt &quot;Segoe UI&quot;;
-</string>
-    </property>
-    <property name="text">
-     <string>Количество
-единиц вооружения</string>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="comboBox_ChooseWeapon">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>83</y>
-      <width>231</width>
-      <height>81</height>
-     </rect>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_Info">
-    <property name="geometry">
-     <rect>
-      <x>1230</x>
-      <y>450</y>
-      <width>231</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="layoutDirection">
-     <enum>Qt::LeftToRight</enum>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 11pt &quot;Segoe UI&quot;;
-</string>
-    </property>
-    <property name="text">
-     <string>Информация об оружии:</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_4">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>280</y>
-      <width>151</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>12</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>Выбрать время
-стрельбы(сек):</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_Meth_2">
-    <property name="geometry">
-     <rect>
-      <x>1230</x>
-      <y>293</y>
-      <width>231</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="layoutDirection">
-     <enum>Qt::LeftToRight</enum>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton {
-    background-color: #4CAF50;  /* Задаем цвет фона */
-    font: 11pt &quot;Segoe UI&quot;;
-    color: white;  /* Задаем цвет текста */
-    border: 1px solid rgb(154, 255, 143);  /* Задаем толщину и цвет границы */
-    border-radius: 7px;  /* Закругляем углы */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);  /* Добавляем тень */
-    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;  /* Добавляем плавные переходы */
-}
-
-QPushButton:hover {
-    background-color: #45a049;  /* Цвет фона при наведении */
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);  /* Увеличиваем тень при наведении */
-    transform: translateY(-2px);  /* Поднимаем кнопку на 2 пикселя */
-}
-
-QPushButton:pressed {
-    background-color: #39803d;  /* Цвет фона при нажатии */
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);  /* Уменьшаем тень при нажатии */
-    transform: translateY(2px);  /* Поднимаем кнопку на 2 пикселя при нажатии */
-}</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
    <widget class="QSpinBox" name="spinBox_speed">
     <property name="geometry">
      <rect>
       <x>190</x>
-      <y>230</y>
+      <y>227</y>
       <width>48</width>
       <height>29</height>
      </rect>
@@ -428,6 +258,89 @@ QPushButton:pressed {
     </property>
     <property name="value">
      <number>4</number>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="spinBox_time">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>297</y>
+      <width>48</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="minimum">
+     <number>10</number>
+    </property>
+    <property name="maximum">
+     <number>60</number>
+    </property>
+    <property name="value">
+     <number>20</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>227</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Выбрать скорость:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>1230</x>
+      <y>10</y>
+      <width>191</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 11pt &quot;Segoe UI&quot;;
+</string>
+    </property>
+    <property name="text">
+     <string>Количество
+единиц вооружения</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_BuyNum">
+    <property name="geometry">
+     <rect>
+      <x>1410</x>
+      <y>0</y>
+      <width>41</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: red;
+font: 15pt &quot;Segoe UI&quot;;</string>
+    </property>
+    <property name="text">
+     <string/>
     </property>
    </widget>
   </widget>

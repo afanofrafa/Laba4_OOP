@@ -4,33 +4,32 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    vector<pair<HINSTANCE, QString>> libraries;
+    vector<pair<HINSTANCE, QString>> libraris;
     if (argc > 1) {
         for (int i = 1; i < argc; i++) {
-            libraries.push_back(make_pair(LoadLibrary(LPCWSTR(argv[i])), argv[i]));
+            libraris.push_back(make_pair(LoadLibrary(LPCWSTR(argv[i])), argv[i]));
         }
     }
     else
     {
-        libraries.push_back(make_pair(LoadLibrary(L"libuGun.dll"), "libuGun.dll"));
-        libraries.push_back(make_pair(LoadLibrary(L"libuRifle.dll"), "libuRifle.dll"));
-        libraries.push_back(make_pair(LoadLibrary(L"libFirearm.dll"), "libFirearm.dll"));
-        libraries.push_back(make_pair(LoadLibrary(L"libuShotGun.dll"), "libuShotGun.dll"));
-        libraries.push_back(make_pair(LoadLibrary(L"libuMachineGun.dll"), "libuMachineGun.dll"));
-        libraries.push_back(make_pair(LoadLibrary(L"lib_Encryption.dll"), "lib_Encryption.dll"));
+        libraris.push_back(make_pair(LoadLibrary(L"libFirearm.dll"), "libFirearm.dll"));
+        libraris.push_back(make_pair(LoadLibrary(L"libEncryption.dll"), "libEncryption.dll"));
+        libraris.push_back(make_pair(LoadLibrary(L"lib_FirearmTemplate.dll"), "lib_FirearmTemplate.dll"));
+        libraris.push_back(make_pair(LoadLibrary(L"libBladedWeapon.dll"), "libBladedWeapon.dll"));
+        libraris.push_back(make_pair(LoadLibrary(L"lib_BladedWeaponTemplate.dll"), "lib_BladedWeaponTemplate.dll"));
     }
-    for (int i = 0; i < libraries.size(); i++) {
-        if (libraries.at(i).first == NULL) {
+    for (int i = 0; i < libraris.size(); i++) {
+        if (libraris.at(i).first == NULL) {
             qDebug() << "Ошибка при загрузке библиотек";
             return 1;
         }
     }
     MainWindow w;
-    w.setLibraries(libraries);
-    if (!w.checkLibraries(libraries)) {
+    w.setLibraries(libraris);
+    /*if (!w.checkLibraries(libraris)) {
         qDebug() << "Ошибка при загрузке библиотек";
         return 1;
-    }
+    }*/
     w.show();
     return a.exec();
 }
